@@ -1,18 +1,16 @@
 <?php
-// index.php - Ana Sayfa / Forum Listeleme (READ)
+
 require_once 'config.php';
 
-// Arama / filtreleme parametreleri
+
 $search   = trim($_GET['search']   ?? '');
 $category = trim($_GET['category'] ?? '');
 
 $pdo = getDB();
 
-// Kategori listesi (filtre dropdown icin)
 $catStmt = $pdo->query('SELECT DISTINCT category FROM posts ORDER BY category ASC');
 $categories = $catStmt->fetchAll(PDO::FETCH_COLUMN);
 
-// Ana sorgu: basliklarla birlikte kullanici adi
 $sql    = 'SELECT p.*, u.username
            FROM posts p
            JOIN users u ON p.user_id = u.id
@@ -39,7 +37,6 @@ $pageTitle = 'Forum Ana Sayfa';
 require_once 'header.php';
 ?>
 
-<!-- Kahraman Alani -->
 <div class="page-hero">
     <div class="container">
         <div class="row align-items-center">
@@ -64,7 +61,7 @@ require_once 'header.php';
 
 <div class="container mb-5">
 
-    <!-- Arama ve Filtre -->
+  
     <div class="card border-0 shadow-sm rounded-3 mb-4">
         <div class="card-body py-3">
             <form method="get" class="row g-2 align-items-end">
@@ -104,13 +101,12 @@ require_once 'header.php';
         </div>
     </div>
 
-    <!-- Sonuc Sayisi -->
+
     <p class="text-muted small mb-3">
         <i class="bi bi-list-ul me-1"></i>
         <strong><?= count($posts) ?></strong> başlık bulundu.
     </p>
 
-    <!-- Baslik Listesi -->
     <?php if (empty($posts)): ?>
         <div class="text-center py-5">
             <i class="bi bi-chat-square-text" style="font-size:3rem;color:#ccc;"></i>
@@ -149,7 +145,6 @@ require_once 'header.php';
                                 </small>
                             </div>
 
-                            <!-- Kullanicinin kendi basligi ise duzenle/sil butonlari -->
                             <?php if (isLoggedIn() && (int)$_SESSION['user_id'] === (int)$post['user_id']): ?>
                             <div class="d-flex gap-2 align-items-center">
                                 <a href="edit.php?id=<?= (int)$post['id'] ?>"

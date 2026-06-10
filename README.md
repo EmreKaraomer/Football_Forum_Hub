@@ -6,9 +6,7 @@
 
 ## 🎬 Tanıtım Videosu
 
-> *(Projeyi tanıtan videonuzun linkini buraya ekleyin)*
-
-📹 **Video Linki:** (https://youtu.be/mf-QHCvqVho)()
+📹 **Video Linki:** (https://youtu.be/mf-QHCvqVho)
 
 ---
 

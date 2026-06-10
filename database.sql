@@ -1,16 +1,9 @@
--- =============================================
--- Futbol Forum Sayfasi - Veritabani Scripti
--- =============================================
-
 CREATE DATABASE IF NOT EXISTS football_forum
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
 USE football_forum;
 
--- ---------------------------------------------
--- Kullanicilari tutan tablo
--- ---------------------------------------------
 CREATE TABLE IF NOT EXISTS users (
     id          INT UNSIGNED    NOT NULL AUTO_INCREMENT,
     username    VARCHAR(50)     NOT NULL UNIQUE,
@@ -20,9 +13,7 @@ CREATE TABLE IF NOT EXISTS users (
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ---------------------------------------------
--- Forum basliklarini tutan tablo
--- ---------------------------------------------
+
 CREATE TABLE IF NOT EXISTS posts (
     id          INT UNSIGNED    NOT NULL AUTO_INCREMENT,
     user_id     INT UNSIGNED    NOT NULL,
@@ -37,10 +28,6 @@ CREATE TABLE IF NOT EXISTS posts (
         ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ---------------------------------------------
--- Ornek veriler (opsiyonel - test icin)
--- ---------------------------------------------
--- Ornek kullanici sifresi: "Test1234" (password_hash ile uretilmis)
 INSERT INTO users (username, email, password) VALUES
 ('futbol_sever', 'futbol@ornek.com', '$2y$12$UXqRJOoI6e/fYV0v7MJxwekJsPb5tBZVVRz2AKmAh3/s.MMJK1/BO'),
 ('golkral',      'golkral@ornek.com', '$2y$12$UXqRJOoI6e/fYV0v7MJxwekJsPb5tBZVVRz2AKmAh3/s.MMJK1/BO');

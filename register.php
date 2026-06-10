@@ -1,8 +1,6 @@
 <?php
-// register.php - Kullanici Kaydi
 require_once 'config.php';
 
-// Zaten giris yapilmissa ana sayfaya yonlendir
 if (isLoggedIn()) {
     header('Location: index.php');
     exit;
@@ -13,13 +11,13 @@ $username = '';
 $email    = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // CSRF ve girdi temizleme
+    
     $username = trim($_POST['username'] ?? '');
     $email    = trim($_POST['email']    ?? '');
     $password = $_POST['password']      ?? '';
     $confirm  = $_POST['confirm']       ?? '';
 
-    // Dogrulama
+ 
     if ($username === '' || strlen($username) < 3) {
         $errors[] = 'Kullanıcı adı en az 3 karakter olmalıdır.';
     }
@@ -36,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         $pdo = getDB();
 
-        // Kullanici adi veya e-posta daha once kullanilmis mi?
         $stmt = $pdo->prepare('SELECT id FROM users WHERE username = ? OR email = ? LIMIT 1');
         $stmt->execute([$username, $email]);
         if ($stmt->fetch()) {

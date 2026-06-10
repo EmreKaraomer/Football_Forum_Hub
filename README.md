@@ -4,21 +4,11 @@
 
 ---
 
-## 📸 Ekran Görüntüleri
-
-> *(Ekran görüntülerini buraya ekleyin — örnek: `![Ana Sayfa](screenshots/homepage.png)`)*
-
-| Ana Sayfa | Kayıt / Giriş | Başlık Oluştur |
-|-----------|---------------|----------------|
-| ![Ana Sayfa]() | ![Giriş]() | ![Oluştur]() |
-
----
-
 ## 🎬 Tanıtım Videosu
 
 > *(Projeyi tanıtan videonuzun linkini buraya ekleyin)*
 
-📹 **Video Linki:** [Buraya YouTube / Drive / vb. linkinizi ekleyin]()
+📹 **Video Linki:** (https://youtu.be/mf-QHCvqVho)()
 
 ---
 
@@ -104,13 +94,6 @@ football_forum/
 3. `database.sql` dosyasını **phpMyAdmin → Import** ile çalıştırın.
 4. `config.php` içindeki sabitleri hosting bilgilerinizle güncelleyin:
    ```php
-   define('DB_HOST', 'localhost');         // Genellikle 'localhost' kalır
-   define('DB_NAME', 'cpanelusr_forum');   // Hosting veritabanı adınız
-   define('DB_USER', 'cpanelusr_dbuser');  // Veritabanı kullanıcı adınız
-   define('DB_PASS', 'güçlü_şifreniz');   // Veritabanı şifreniz
-   ```
-
-> ⚠️ `config.php` dosyasını kesinlikle herkese açık bir repoya yüklemeyiniz.
 
 ---
 

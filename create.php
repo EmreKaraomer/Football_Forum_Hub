@@ -1,5 +1,5 @@
 <?php
-// create.php - Yeni Baslik Olustur (CREATE)
+
 require_once 'config.php';
 requireLogin(); // Giris yapilmamissa login'e yonlendir
 

@@ -1,6 +1,4 @@
 <?php
-// header.php - Her sayfada include edilecek ust kisim
-// config.php zaten include edilmis olmali
 ?>
 <!DOCTYPE html>
 <html lang="tr">
@@ -9,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= e(isset($pageTitle) ? $pageTitle . ' | ' . SITE_NAME : SITE_NAME) ?></title>
 
-    <!-- Bootstrap 5 CSS -->
+ 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <!-- Bootstrap Icons -->
+  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
@@ -155,7 +153,6 @@
     </div>
 </nav>
 
-<!-- ===== FLASH MESAJLARI ===== -->
 <?php if (!empty($_SESSION['flash_success'])): ?>
 <div class="container mt-3">
     <div class="alert alert-success alert-dismissible fade show" role="alert">

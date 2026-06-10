@@ -1,22 +1,16 @@
 <?php
-// =============================================
-// config.php - Veritabani Baglanti Ayarlari
-// =============================================
-// Canlı sunucuya yuklemeden once asagidaki
-// degerleri kendi hosting bilgilerinizle degistirin.
-// =============================================
 
-define('DB_HOST', 'localhost');      // Genellikle 'localhost' kalir
-define('DB_NAME', 'football_forum'); // Veritabani adiniz
-define('DB_USER', 'root');           // Veritabani kullanici adiniz
-define('DB_PASS', '');               // Veritabani sifreniz
+
+define('DB_HOST', 'localhost');   
+define('DB_NAME', 'football_forum'); 
+define('DB_USER', 'root');       
+define('DB_PASS', '');           
 define('DB_CHARSET', 'utf8mb4');
 
 // Uygulama genel ayarlari
 define('SITE_NAME', 'Futbol Forum');
-define('SITE_URL', '');              // Opsiyonel: https://siteadiniz.com
+define('SITE_URL', '');   
 
-// Oturum baslatma (her sayfada tekrar baslatilmasin diye burada kontrol edilir)
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -39,7 +33,7 @@ function getDB(): PDO {
         try {
             $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
         } catch (PDOException $e) {
-            // Uretim ortaminda hata detayini gizle
+         
             die('<div style="font-family:sans-serif;padding:2rem;color:#721c24;background:#f8d7da;border:1px solid #f5c6cb;border-radius:8px;">
                     <strong>Veritabani baglantisi kurulamadi.</strong> Lutfen config.php dosyasini kontrol edin.
                  </div>');
